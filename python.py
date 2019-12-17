@@ -5,8 +5,12 @@
 
 a, o, b = input(), input(), input()
 
-print(a+b if oper == "+"
-    else a-b if oper == "-"
-    else a*b if oper == "*"
-    else a/b if oper == "/" and b != 0
-    else "Ошибка")
+n = 0
+if '"'  == a or a == '\'':
+    n+=1
+if '"' == b or b == '\'':
+    n+=1
+if '"' == o or o == '\'':
+    n+=1
+
+print(n)
