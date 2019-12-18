@@ -6,19 +6,13 @@
  Если все числа введены правильно выводиться "Молодец, ты научилась считать до 5" и количество введенных цифр.
 '''
 n = 0
-numbers = [1, 2, 3, 4, 5]
-str = []
+num = "12345"
+str2 = ""
 while True:
-    n+=1
-    str.append(int(input()))
-    if str == numbers:
-        print("Молодец, ты научилась считать до 5")
-        print(n)
-        continue
-
-'''
-    print(f'str = {str}')
-    print(str == numbers)
-    if n > 5:
+    n += 1
+    str2 += input()
+    if num in str2:
+        print("Молодец, ты научилась считать до 5", n, sep="\n")
         break
-'''
+    else:
+        continue
