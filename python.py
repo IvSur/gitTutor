@@ -9,9 +9,11 @@
 Одно число - искомый результат.
 '''
 n, a, b = int(input()), int(input()), int(input())
-q = []
+sum = 0
 
 for value in range(n):
-    q.append(int(input()))
+    w = int(input())
+    if a <= w <= b:
+        sum += w
 
-print(q)
+print(sum)
