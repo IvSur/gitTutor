@@ -1,20 +1,13 @@
 '''
-Программа получает на вход одну фразу и если в этой фразе есть описание половины чего-либо,
-умножает на два. Как в примере ниже.
+Напишите программу которая получает на вход одну фразу и печатает ее как в примере ниже.
+     т
+    ет
+   вет
+  ивет
+ ривет
+привет
 '''
 str = input()
 
-if str[:4] == "пол-":
-    print(str.lower().replace("пол-", "два "))
-if str[:4] == "пол ":
-    print(str.lower().replace("пол ", "два "))
-elif str[:3] == "пол":
-    print(str.lower().replace("пол", "два "))
-elif " пол-" in str:
-    print(str.lower().replace(" пол-", " два "))
-elif " пол " in str:
-    print(str.lower().replace(" пол ", " два "))
-elif " пол" in str:
-    print(str.lower().replace(" пол", " два "))
-else:
-    print(str)
+for i in range(len(str)):
+    print(" " * (len(str) - i), str[len(str)-i-1::], sep = "")
