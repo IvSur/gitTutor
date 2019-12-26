@@ -7,7 +7,7 @@ while True:
     txt = input()
     if txt == "стоп":
         break
-    if txt[0].isupper():
+    if txt[0].isupper() and txt[1].islower():
         print("верно")
     else:
         print("исправить")
