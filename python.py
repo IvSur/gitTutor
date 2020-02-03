@@ -4,9 +4,10 @@
 -----------------------
 Sample Input:
 5
+6
 1
-2
-3
+7
+0
 4
 5
 ----------
@@ -21,6 +22,5 @@ while n > 0:
     n -= 1
     l.append(int(input()))
 
+l.sort(reverse=True)
 print(l)
-
-
