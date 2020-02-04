@@ -1,34 +1,35 @@
 """
-Напишите программу, которая получает на вход сначала количество слов, затем сами слова.
-Выводит список с количеством букв в каждом слове и затем слово в котором больше всего букв,
-если таких слов несколько то первое, которое встретилось.
+Вводиться количество людей, а затем имя каждого человека и его рост ,
+программа должна вывести имена всех людей по росту начиная с самого низкого, если рост совпадает,
+то выводится в том же порядке как и вносились.
 -----------------------
 Sample Input:
-3
-один
-два
-три
+4
+Петр
+150
+Василий
+180
+Иван
+155
+Анна
+170
 ----------
 Sample Output:
-4
-3
-3
-один
+Петр Иван Анна Василий
 """
 
-countWords = int(input())
-words = []
-countLetters = 0
-wordXXL = ""
+count = int(input())
+data = {}
 
-while countWords > 0:
-    countWords -= 1
-    words.append(input())
+while count > 0:
+    count -= 1
+    words = []
+    for i in range(2):
+        words.append(input())
+    data[words[0]] = words[1]
 
-for word in words:
-    print(len(word))
-    if countLetters < len(word):
-        countLetters = len(word)
-        wordXXL = word
+list_d = list(data.items())
+list_d.sort(key=lambda i: i[1])
 
-print(wordXXL)
+for item in list_d:
+    print(item[0], end=" ")
