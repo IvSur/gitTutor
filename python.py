@@ -16,22 +16,19 @@ Sample Output:
 один
 """
 
-n = int(input())
-l = []
+countWords = int(input())
+words = []
+countLetters = 0
+wordXXL = ""
 
-while n > 0:
-    n -= 1
-    l.append(int(input()))
+while countWords > 0:
+    countWords -= 1
+    words.append(input())
 
-print("Цена товаров:")
-for str in l:
-    print(str)
+for word in words:
+    print(len(word))
+    if countLetters < len(word):
+        countLetters = len(word)
+        wordXXL = word
 
-print()
-print("Цена товаров со скидкой:")
-for str in l:
-    numb = str * 0.9
-    if numb % 1 == 0:
-        print(int(numb))
-    else:
-        print(round(numb, 1))
+print(wordXXL)
