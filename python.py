@@ -1,33 +1,28 @@
 """
-Вводиться одно число количество дней которые необходимо описать, выводится дни недели начиная с понедельника.
+Вводиться количество слов, затем сами слова, выводится количество слов, которые повторялись.
 -----------------------
 Sample Input:
-5
+4
+один
+один
+два
+два
 ----------
 Sample Output:
-Понедельник
-Вторник
-Среда
-Четверг
-Пятница
+2
 """
 
 count = int(input())
-days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота", "Воскресенье"]
+words = []
+for i in range(count):
+    words.append(input())
+
 n = 0
-countSeven = (count // 7)   #сколько раз надо вывести ВСЕ дни недели
-# Если кол-во дней меньше 7...
-if count <= 7:
-    for item in range(count):
-        print(days[item])
-else:
-    while countSeven > 0:   # выводит ВСЕ дни недели нужное кол-во раз
-        countSeven -= 1
-        for item in days:
-            print(item)
-    if count % 7 != 0:      # чтобы не выводить повторно дни недели, когда кол-во дней кратно 7
-        while count > 7:    # вычисляем, сколько дней осталось вывести
-            count = count - 7
-            n += 1
-        for day in range(count):
-            print(days[day])
+for word in words:
+    # print('count', word, ' = ', words.count(word))
+    if words.count(word) > 1:
+        n += 1
+        while word in words:
+            words.remove(word)
+
+print(n)
