@@ -1,26 +1,20 @@
 """
-Поменять местами самый большой и самый маленький элементы списка, на вход поступает строка из чисел,
-возвращаться исправленная строка, как в примере ниже.
-Если таких элементов несколько то с первыми которые встретились.
+Вводится строка из чисел через пробелы, выводиться список чисел без первого и последнего числа.
+(числа могут вводиться через любое количество пробелов)
 -----------------------
 Sample Input:
 1 2 3
 -----------
 Sample Output:
-3 2 1
+[2]
 """
 
 q = input().split()
 w = []
+
+q.pop(0)
+q.pop(len(q) - 1)
 for item in q:
     w.append(int(item))
 
-indexMin = w.index(min(w))
-indexMax = w.index(max(w))
-minItem = w.pop(w.index(min(w)))
-maxItem = w.pop(w.index(max(w)))
-w.insert(indexMin, maxItem)
-w.insert(indexMax, minItem)
-
-for i in w:
-    print(i, end=" ")
+print(w)
