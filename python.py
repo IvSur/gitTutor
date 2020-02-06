@@ -10,7 +10,7 @@ Sample Input:
 2
 1
 0
-----------
+-----------
 Sample Output:
 3
 """
