@@ -1,28 +1,24 @@
 """
-Вводиться количество слов, затем сами слова, выводится количество слов, которые повторялись.
+Напишите программу, которая получает данные о полете самолета с датчика высоты каждую секунду,
+известно что полет является завершенным когда высота равна 0.
+Программа получает показания и должна вывести на какой секунде полета самолет достиг максимальной высоты.
 -----------------------
 Sample Input:
-4
-один
-один
-два
-два
+1
+2
+3
+2
+1
+0
 ----------
 Sample Output:
-2
+3
 """
 
-count = int(input())
-words = []
-for i in range(count):
-    words.append(input())
+q = []
+while True:
+    q.append(int(input()))
+    if 0 in q:
+        break
 
-n = 0
-for word in words:
-    # print('count', word, ' = ', words.count(word))
-    if words.count(word) > 1:
-        n += 1
-        while word in words:
-            words.remove(word)
-
-print(n)
+print(q.index(max(q)) + 1)
