@@ -20,7 +20,6 @@ Sample Output:
 """
 
 www = []
-
 while True:
     q = input().lower()
     www.append(q)
